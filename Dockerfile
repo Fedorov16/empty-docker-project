@@ -16,4 +16,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN curl -o- https://gist.githubusercontent.com/ankurk91/8f107ef490f40f74a1cf/raw/install-node-js.sh | bash
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
-WORKDIR /var/www/parser
+WORKDIR /var/www/code

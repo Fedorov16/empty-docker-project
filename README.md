@@ -2,19 +2,10 @@
 
 ### Install project
 ```
-docker volume create parser
+docker volume create code
 
 make build
 
-make in
-
-composer install
-
-php bin/console d:m:m
-
-control+D
-
-make yarn
 
 ```
 ### Up project
@@ -22,7 +13,6 @@ make yarn
 ```
 make up
 
-make watch
 ```
 
 ### down project

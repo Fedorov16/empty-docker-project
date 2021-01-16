@@ -16,13 +16,13 @@ _down:
 	docker-compose down
 
 _in:
-	docker exec -it parser_php bash
+	docker exec -it code_php bash
 
 _yarn:
-	cd parser && yarn install
+	cd code && yarn install
 
 _watch:
-	cd parser && yarn encore dev --watch
+	cd code && yarn encore dev --watch
 
 _prod:
-	cd parser && yarn encore production
+	cd code && yarn encore production

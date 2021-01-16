@@ -3,25 +3,25 @@ version: '2'
 services:
   web:
     image: nginx:latest
-    container_name: parser_web
+    container_name: code_web
     ports:
       - "8090:90"
     volumes:
-      - ./parser:/parser
+      - ./code:/code
       - ./site.conf:/etc/nginx/conf.d/default.conf
     networks:
-      - parser
+      - code
   php:
-    container_name: parser_php
+    container_name: code_php
     build:
       context: ""
       dockerfile: Dockerfile
     volumes:
-      - ./parser:/parser
+      - ./code:/code
     networks:
-      - parser
+      - code
   postgres:
-    container_name: parser_postgres
+    container_name: code_postgres
     image: postgres:11
     restart: always
     ports:
@@ -31,10 +31,10 @@ services:
       - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=postgres
     networks:
-      - parser
+      - code
     volumes:
       - ./postgres/:/var/lib/postgresql/data
 
 networks:
-  parser:
+  code:
     driver: bridge
